@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bean & Brew | Home 2 - Global Roastery & Origins</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+</head>
+<body class="bg-amber-50/50 dark:bg-zinc-900 text-amber-950 dark:text-amber-100 font-sans antialiased transition-colors duration-300 overflow-x-hidden">
+
+  <!-- ================= 1. NAVBAR & HAMBURGER MENU ================= -->
+  <header class="sticky top-0 z-50 bg-white dark:bg-zinc-950 text-amber-950 dark:text-amber-50 shadow-sm border-b border-amber-200/60 dark:border-zinc-800 transition-colors duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="index.html" class="flex items-center gap-2">
+          <svg class="w-8 h-8 text-amber-600 dark:text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M2 21h20v-2H2v2M20 8h-2V5c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v3H4c-1.1 0-2 .9-2 2v2c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4v-2c0-1.1-.9-2-2-2zM8 5h8v3H8V5zm10 7c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-1h14v1z"/>
+          </svg>
+          <span class="text-xl font-bold tracking-wide font-serif text-amber-950 dark:text-white">Bean & Brew</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Links with File Redirects -->
+      <div class="hidden lg:flex items-center gap-6 xl:gap-8 font-semibold text-sm xl:text-base">
+        
+        <!-- Home Dropdown Container -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-amber-600 dark:text-amber-300 hover:text-amber-600 dark:hover:text-amber-300 transition-colors py-2 focus:outline-none">
+            <span>Home</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <!-- Dropdown Box -->
+          <div class="absolute ltr:left-0 rtl:right-0 mt-0 w-48 bg-white dark:bg-zinc-900 border border-amber-200 dark:border-zinc-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 py-2 z-50">
+             <a href="index.html" class="block px-4 py-2 rounded-md text-sm font-semibold text-amber-900 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-zinc-800">Home1</a>
+             <a href="home2.html" class="block px-4 py-2 rounded-md text-sm font-semibold text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-zinc-800">Home2 (Active)</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="text-amber-900 dark:text-amber-100 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">About Us</a>
+        <a href="services.html" class="text-amber-900 dark:text-amber-100 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Services</a>
+        <a href="menu.html" class="text-amber-900 dark:text-amber-100 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Menu</a>
+        <a href="offers.html" class="text-amber-900 dark:text-amber-100 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Offers</a>
+        <a href="gallery.html" class="text-amber-900 dark:text-amber-100 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Gallery</a>
+        <a href="contact.html" class="text-amber-900 dark:text-amber-100 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Contact</a>
+      </div>
+
+      <!-- Utilities: Dark Mode, RTL, Auth & Mobile Menu Button -->
+      <div class="hidden lg:flex items-center gap-3 shrink-0">
+        <!-- Dark Mode Toggle Button -->
+        <button id="darkModeToggle" aria-label="Toggle Dark Mode" class="p-2 rounded-full hover:bg-amber-100 dark:hover:bg-zinc-800 transition-colors">
+          <svg class="w-5 h-5 text-amber-900 dark:text-amber-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- RTL Toggle Button -->
+        <button id="rtlToggle" aria-label="Toggle RTL Layout" class="px-3 py-1.5 text-xs font-bold rounded bg-amber-100 dark:bg-zinc-800 hover:bg-amber-200 dark:hover:bg-zinc-700 transition-colors text-amber-900 dark:text-amber-200">
+          RTL
+        </button>
+
+        <!-- Login / Account Redirect -->
+        <a href="login.html" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white text-xs xl:text-sm font-bold rounded-lg shadow transition-colors">
+          BOOK NOW
+        </a>
+      </div>
+
+      <!-- Mobile & Tablet Menu Hamburger Button -->
+      <div class="lg:hidden flex items-center gap-2">
+        <button id="darkModeToggleMobile" aria-label="Toggle Dark Mode" class="p-2 rounded-full text-amber-950 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-zinc-800 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+        </button>
+        <button id="hamburgerBtn" aria-label="Open Menu" class="p-2 rounded-lg text-amber-950 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-zinc-800 focus:outline-none z-50 relative">
+          <!-- Hamburger Icon (Default) -->
+          <svg id="hamburgerIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <!-- Close 'X' Icon (Hidden by default) -->
+          <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Full Screen Overlay Menu (Solid background for maximum clarity) -->
+    <div id="mobileMenu" class="fixed inset-0 bg-amber-50 dark:bg-zinc-950 z-40 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col justify-between overflow-y-auto px-6 py-24 text-amber-950 dark:text-amber-100">
+      
+      <!-- Menu Links Container with Maximum Brightness -->
+      <div class="space-y-4 text-center">
+        <!-- Collapsible Home Accordion for Mobile/Tablet -->
+        <div class="py-2 space-y-2">
+          <button id="mobileHomeDropdownBtn" class="flex items-center justify-center gap-2 w-full py-3 font-serif text-2xl font-extrabold text-amber-950 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors focus:outline-none">
+            <span>Home</span>
+            <svg id="mobileHomeArrow" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="mobileHomeSubmenu" class="hidden mt-2 space-y-2 bg-amber-200/70 dark:bg-zinc-900 py-3 rounded-xl border border-amber-300 dark:border-zinc-800">
+            <a href="index.html" class="block py-1.5 text-lg font-bold text-amber-950 dark:text-white hover:text-amber-600">Home1</a>
+            <a href="home2.html" class="block py-1.5 text-lg font-bold text-amber-700 dark:text-amber-400 hover:text-amber-600">Home2 (Active)</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="block py-3 font-serif text-2xl font-extrabold text-amber-950 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors">About Us</a>
+        <a href="services.html" class="block py-3 font-serif text-2xl font-extrabold text-amber-950 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Services</a>
+        <a href="menu.html" class="block py-3 font-serif text-2xl font-extrabold text-amber-950 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Menu</a>
+        <a href="offers.html" class="block py-3 font-serif text-2xl font-extrabold text-amber-950 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Offers</a>
+        <a href="gallery.html" class="block py-3 font-serif text-2xl font-extrabold text-amber-950 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Gallery</a>
+        <a href="contact.html" class="block py-3 font-serif text-2xl font-extrabold text-amber-950 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Contact</a>
+      </div>
+
+      <!-- Bottom Utilities & Book Now -->
+      <div class="pt-8 border-t border-amber-200 dark:border-zinc-800 space-y-6 text-center max-w-sm mx-auto w-full">
+        <div class="flex items-center justify-center gap-4">
+          <button id="mobileDarkModeToggle" class="px-4 py-2.5 rounded-xl bg-amber-200 dark:bg-zinc-900 text-sm font-bold text-amber-950 dark:text-amber-100 hover:bg-amber-300 dark:hover:bg-zinc-800 transition-colors w-1/2">Dark Mode</button>
+          <button id="mobileRtlToggle" class="px-4 py-2.5 rounded-xl bg-amber-200 dark:bg-zinc-900 text-sm font-bold text-amber-950 dark:text-amber-100 hover:bg-amber-300 dark:hover:bg-zinc-800 transition-colors w-1/2">RTL Toggle</button>
+        </div>
+        <a href="login.html" class="block w-full py-3.5 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl text-center shadow-lg transition-colors">BOOK NOW</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= 2. HERO BANNER SECTION (Customized for Home 2) ================= -->
+  <section class="relative bg-amber-950 text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image: url('image/coffee (22).jpg');"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-36 lg:py-44 flex flex-col items-center text-center justify-center">
+      <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-amber-800 text-amber-200 mb-6 shadow-sm border border-amber-700">
+        Direct From Global Plantations to Your Cup
+      </span>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold font-serif tracking-tight max-w-4xl leading-tight mb-6">
+        Exploring Single-Origin Harvests & Master Roasting.
+      </h1>
+      <p class="text-base sm:text-xl text-amber-200 max-w-2xl mb-10 leading-relaxed font-medium">
+        Embark on a sensory expedition across Ethiopia, Colombia, and Sumatra. Experience precision small-batch roasts crafted for true coffee purists.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto">
+        <a href="menu.html" class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-semibold rounded-xl shadow-lg text-amber-950 bg-amber-400 hover:bg-amber-300 transition-all">
+          Explore Reserve Blends
+        </a>
+        <a href="about.html" class="inline-flex items-center justify-center px-8 py-3.5 border border-amber-300 text-base font-semibold rounded-xl text-amber-100 hover:bg-amber-800 transition-all">
+          Our Sourcing Story
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. HOME 2 HIGHLIGHTS SECTION ================= -->
+  <section class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+      <h2 class="text-2xl sm:text-3xl font-bold font-serif text-amber-950 dark:text-amber-100 mb-4">The Roastery Experience</h2>
+      <p class="text-sm sm:text-base font-medium text-amber-900 dark:text-amber-300">Discover what makes our global bean selection unique from harvest to roast.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-sm border border-amber-200 dark:border-zinc-700 text-center">
+        <div class="w-14 h-14 bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-xl">🌍</div>
+        <h3 class="text-xl font-bold font-serif mb-2 text-amber-950 dark:text-amber-100">Global Direct Trade</h3>
+        <p class="text-sm font-medium text-amber-900 dark:text-amber-300 leading-relaxed">We work hand-in-hand with independent growers to ensure equitable wages and superior crop quality.</p>
+      </div>
+
+      <div class="bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-sm border border-amber-200 dark:border-zinc-700 text-center">
+        <div class="w-14 h-14 bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-xl">🔥</div>
+        <h3 class="text-xl font-bold font-serif mb-2 text-amber-950 dark:text-amber-100">Small-Batch Roasting</h3>
+        <p class="text-sm font-medium text-amber-900 dark:text-amber-300 leading-relaxed">Roasted weekly in our vintage drum roaster to guarantee maximum freshness and flavor notes.</p>
+      </div>
+
+      <div class="bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-sm border border-amber-200 dark:border-zinc-700 text-center">
+        <div class="w-14 h-14 bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-xl">☕</div>
+        <h3 class="text-xl font-bold font-serif mb-2 text-amber-950 dark:text-amber-100">Expert Extraction</h3>
+        <p class="text-sm font-medium text-amber-900 dark:text-amber-300 leading-relaxed">Calibrated water temperatures, exact grind ratios, and skilled baristas for the ideal cup.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. ORIGIN SPOTLIGHT ================= -->
+  <section class="py-16 md:py-20 bg-amber-100/60 dark:bg-zinc-800/60 border-y border-amber-200 dark:border-zinc-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-200 dark:bg-zinc-700 px-3 py-1 rounded-full">Origin Spotlight</span>
+          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-amber-950 dark:text-amber-100">Ethiopian Yirgacheffe Reserve</h2>
+          <p class="text-sm sm:text-base font-medium text-amber-900 dark:text-amber-300 leading-relaxed">Grown at elevations over 2,000 meters in rich soil, our heirloom Yirgacheffe lot is wet-processed to highlight its hallmark sparkling brightness and floral jasmine fragrance.</p>
+          <div class="grid grid-cols-3 gap-4 pt-2">
+            <div class="p-4 bg-white dark:bg-zinc-800 rounded-xl border border-amber-200 dark:border-zinc-700 text-center">
+              <span class="block text-xs text-amber-700 dark:text-amber-400 font-bold uppercase">Altitude</span>
+              <span class="text-sm font-serif font-bold text-amber-950 dark:text-amber-100">2,100m</span>
+            </div>
+            <div class="p-4 bg-white dark:bg-zinc-800 rounded-xl border border-amber-200 dark:border-zinc-700 text-center">
+              <span class="block text-xs text-amber-700 dark:text-amber-400 font-bold uppercase">Process</span>
+              <span class="text-sm font-serif font-bold text-amber-950 dark:text-amber-100">Washed</span>
+            </div>
+            <div class="p-4 bg-white dark:bg-zinc-800 rounded-xl border border-amber-200 dark:border-zinc-700 text-center">
+              <span class="block text-xs text-amber-700 dark:text-amber-400 font-bold uppercase">Notes</span>
+              <span class="text-sm font-serif font-bold text-amber-950 dark:text-amber-100">Bergamot</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative h-80 rounded-2xl overflow-hidden shadow-xl border border-amber-200 dark:border-zinc-700">
+          <img src="image/variety coffee (7).jpg" alt="Ethiopian coffee harvest" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-amber-950/80 to-transparent flex items-end p-6">
+            <p class="text-amber-100 text-sm font-semibold">Hand-picked heirloom coffee cherries drying on raised African beds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. INTERACTIVE COFFEE QUIZ ================= -->
+  <section class="py-16 md:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white dark:bg-zinc-800 p-8 sm:p-12 rounded-3xl border border-amber-200 dark:border-zinc-700 shadow-xl text-center">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-zinc-700 px-3 py-1 rounded-full">Tailored Match</span>
+      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-amber-950 dark:text-amber-100 mt-3 mb-2">Find Your Ideal Roast Match</h2>
+      <p class="text-amber-900 dark:text-amber-300 text-sm font-medium max-w-lg mx-auto mb-8">Not sure which single-origin or blend suits your palate? Tell us your preferred brewing style below.</p>
+      
+      <div id="quizContainer" class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <button onclick="selectBrew('pour-over')" id="btn-pour-over" class="p-4 rounded-xl border border-amber-300 dark:border-zinc-600 hover:border-amber-600 dark:hover:border-amber-500 text-left transition-all">
+            <span class="text-lg mb-1 block">☕</span>
+            <h4 class="font-bold text-amber-950 dark:text-amber-100">Pour Over / V60</h4>
+            <p class="text-xs font-medium text-amber-800 dark:text-amber-300 mt-1">Light & aromatic notes</p>
+          </button>
+          <button onclick="selectBrew('espresso')" id="btn-espresso" class="p-4 rounded-xl border border-amber-300 dark:border-zinc-600 hover:border-amber-600 dark:hover:border-amber-500 text-left transition-all">
+            <span class="text-lg mb-1 block">⚡</span>
+            <h4 class="font-bold text-amber-950 dark:text-amber-100">Espresso Machine</h4>
+            <p class="text-xs font-medium text-amber-800 dark:text-amber-300 mt-1">Rich crema & full body</p>
+          </button>
+          <button onclick="selectBrew('cold-brew')" id="btn-cold-brew" class="p-4 rounded-xl border border-amber-300 dark:border-zinc-600 hover:border-amber-600 dark:hover:border-amber-500 text-left transition-all">
+            <span class="text-lg mb-1 block">🧊</span>
+            <h4 class="font-bold text-amber-950 dark:text-amber-100">Cold Brew / French</h4>
+            <p class="text-xs font-medium text-amber-800 dark:text-amber-300 mt-1">Smooth & low acidity</p>
+          </button>
+        </div>
+        <div id="quizResult" class="hidden p-4 bg-amber-50 dark:bg-zinc-900 rounded-xl border border-amber-200 dark:border-zinc-700 text-amber-950 dark:text-amber-100 text-sm font-bold">
+          🎉 Recommended for you: <span id="recommendationText" class="font-bold text-amber-700 dark:text-amber-400"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. ROASTING PROCESS TIMELINE ================= -->
+  <section class="py-16 md:py-20 bg-amber-950 text-amber-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-900 px-3 py-1 rounded-full">Artisanal Craft</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-2 mb-4">The Roasting Journey</h2>
+        <p class="text-sm font-medium text-amber-300">Follow raw green coffee beans through our precision roastery stages.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-amber-900/50 p-6 rounded-2xl border border-amber-800">
+          <span class="text-amber-400 font-serif font-bold text-2xl mb-2 block">01</span>
+          <h3 class="font-bold text-white mb-1">Green Grading</h3>
+          <p class="text-xs font-medium text-amber-300 leading-relaxed">Hand-sorting green beans to screen out defects and guarantee consistent moisture levels.</p>
+        </div>
+        <div class="bg-amber-900/50 p-6 rounded-2xl border border-amber-800">
+          <span class="text-amber-400 font-serif font-bold text-2xl mb-2 block">02</span>
+          <h3 class="font-bold text-white mb-1">Drum Charging</h3>
+          <p class="text-xs font-medium text-amber-300 leading-relaxed">Introducing beans into our cast-iron roastery drum pre-heated to precise thermal targets.</p>
+        </div>
+        <div class="bg-amber-900/50 p-6 rounded-2xl border border-amber-800">
+          <span class="text-amber-400 font-serif font-bold text-2xl mb-2 block">03</span>
+          <h3 class="font-bold text-white mb-1">First Crack</h3>
+          <p class="text-xs font-medium text-amber-300 leading-relaxed">Monitoring acoustic expansion and exothermic reactions as sugars begin caramelizing.</p>
+        </div>
+        <div class="bg-amber-900/50 p-6 rounded-2xl border border-amber-800">
+          <span class="text-amber-400 font-serif font-bold text-2xl mb-2 block">04</span>
+          <h3 class="font-bold text-white mb-1">Cooling Tray</h3>
+          <p class="text-xs font-medium text-amber-300 leading-relaxed">Rapid air cooling to halt the roasting reaction instantly and lock in delicate flavor profiles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. COFFEE MASTERCLASS EVENTS ================= -->
+  <section class="py-16 md:py-20 bg-amber-100/60 dark:bg-zinc-800/60 border-t border-amber-200 dark:border-zinc-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-200 dark:bg-zinc-700 px-3 py-1 rounded-full">Upcoming Events</span>
+          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-amber-950 dark:text-amber-100">Sensory Cupping & Tasting Nights</h2>
+          <p class="text-sm sm:text-base font-medium text-amber-900 dark:text-amber-300 leading-relaxed">Join our lead roasters every Friday evening for an intimate cupping session. Compare origins side-by-side, learn flavor wheel terminology, and taste experimental fermentations.</p>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-4 bg-white dark:bg-zinc-800 rounded-xl border border-amber-200 dark:border-zinc-700">
+              <div>
+                <h4 class="font-bold text-amber-950 dark:text-amber-100 text-sm">Friday Origin Cupping</h4>
+                <p class="text-xs font-semibold text-amber-700 dark:text-amber-400">Every Friday • 6:00 PM – 7:30 PM</p>
+              </div>
+              <a href="contact.html" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded-lg transition-colors flex-shrink-0 ml-2">Reserve Seat</a>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-white dark:bg-zinc-800 rounded-xl border border-amber-200 dark:border-zinc-700">
+              <div>
+                <h4 class="font-bold text-amber-950 dark:text-amber-100 text-sm">Advanced Espresso Calibration</h4>
+                <p class="text-xs font-semibold text-amber-700 dark:text-amber-400">Saturday • 10:00 AM – 1:00 PM</p>
+              </div>
+              <a href="contact.html" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded-lg transition-colors flex-shrink-0 ml-2">Reserve Seat</a>
+            </div>
+          </div>
+        </div>
+        <div class="relative h-80 rounded-2xl overflow-hidden shadow-xl border border-amber-200 dark:border-zinc-700">
+          <img src="image/variety coffee (6).jpg" alt="Coffee tasting workshop" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-amber-950/80 to-transparent flex items-end p-6">
+            <p class="text-amber-100 text-sm font-semibold">Professional coffee cupping spoons and aromatic flavor vials.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. FOOTER SECTION WITH LOCATION PARTITION ================= -->
+  <footer class="bg-white dark:bg-zinc-950 text-amber-950 dark:text-amber-100 border-t border-amber-200 dark:border-zinc-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4 sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-2">
+            <svg class="w-7 h-7 text-amber-600 dark:text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M2 21h20v-2H2v2M20 8h-2V5c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v3H4c-1.1 0-2 .9-2 2v2c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4v-2c0-1.1-.9-2-2-2zM8 5h8v3H8V5zm10 7c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-1h14v1z"/>
+            </svg>
+            <span class="text-xl font-bold font-serif text-amber-950 dark:text-white">Bean & Brew</span>
+          </div>
+          <p class="text-sm font-semibold text-amber-950/90 dark:text-amber-300 leading-relaxed">
+            Crafting memorable coffee experiences one cup at a time. Visit us for community, comfort, and caffeine.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-4">Quick Links</h3>
+          <ul class="space-y-2.5 text-sm font-semibold text-amber-950 dark:text-amber-300">
+            <li><a href="index.html" class="hover:text-amber-600 dark:hover:text-amber-300 transition-colors">Home</a></li>
+            <li><a href="menu.html" class="hover:text-amber-600 dark:hover:text-amber-300 transition-colors">Our Menu</a></li>
+            <li><a href="about.html" class="hover:text-amber-600 dark:hover:text-amber-300 transition-colors">About Us</a></li>
+            <li><a href="gallery.html" class="hover:text-amber-600 dark:hover:text-amber-300 transition-colors">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-amber-600 dark:hover:text-amber-300 transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Café Location Partition -->
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-4">Café Location</h3>
+          <p class="text-sm font-semibold text-amber-950/90 dark:text-amber-300 leading-relaxed mb-3">
+            123 Artisan Lane, Corner Street<br>
+            Downtown District<br>
+            Cityville, State 12345
+          </p>
+          <a href="contact.html" class="inline-flex items-center text-xs font-bold text-amber-700 dark:text-amber-400 hover:text-amber-900 dark:hover:text-amber-200 transition-colors">
+            <span>Get Directions &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Operating Hours Partition -->
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-4">Opening Hours</h3>
+          <ul class="space-y-2 text-sm font-semibold text-amber-950/90 dark:text-amber-300">
+            <li class="flex justify-between">
+              <span>Mon - Fri:</span>
+              <span class="font-bold text-amber-950 dark:text-white">7:00 AM – 8:00 PM</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Sat - Sun:</span>
+              <span class="font-bold text-amber-950 dark:text-white">8:00 AM – 9:00 PM</span>
+            </li>
+          </ul>
+          <div class="mt-3 text-xs font-semibold text-amber-700 dark:text-amber-400">
+            * Holiday hours may vary.
+          </div>
+        </div>
+
+        <!-- Stay Connected / Newsletter -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-4">Stay Connected</h3>
+          <p class="text-sm font-semibold text-amber-950/90 dark:text-amber-300 mb-3">Subscribe to get special offers and event updates.</p>
+          <form onsubmit="event.preventDefault(); showCustomMessage('Subscribed successfully!');" class="space-y-2">
+            <input type="email" placeholder="Your email address" required class="w-full px-3 py-2 text-sm font-medium bg-amber-50 dark:bg-zinc-900 border border-amber-200 dark:border-zinc-800 rounded-lg text-amber-950 dark:text-white placeholder-amber-600 dark:placeholder-amber-400 focus:outline-none focus:border-amber-600">
+            <button type="submit" class="w-full px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white text-sm font-bold rounded-lg transition-colors">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-amber-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between text-xs font-semibold text-amber-700 dark:text-amber-400 space-y-4 sm:space-y-0 text-center sm:text-left">
+        <p>&copy; 2026 Bean & Brew Coffee Shop. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="privacy.html" class="hover:text-amber-950 dark:hover:text-amber-200 transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-amber-950 dark:hover:text-amber-200 transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Message Modal -->
+  <div id="customModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-zinc-950 border border-amber-200 dark:border-zinc-800 text-amber-950 dark:text-amber-100 rounded-2xl p-6 max-w-sm w-full shadow-2xl text-center space-y-4">
+      <h3 id="modalTitle" class="text-xl font-bold font-serif text-amber-600 dark:text-amber-300">Notice</h3>
+      <p id="modalMessage" class="text-sm font-semibold text-amber-950 dark:text-amber-200">Message content goes here.</p>
+      <button onclick="closeCustomModal()" class="px-6 py-2.5 bg-amber-600 hover:bg-amber-500 text-white text-sm font-bold rounded-xl transition-colors w-full">Got it</button>
+    </div>
+  </div>
+
+  <!-- Script for interactivity -->
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const closeIcon = document.getElementById('closeIcon');
+
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('translate-x-full');
+      mobileMenu.classList.toggle('translate-x-0');
+      document.body.classList.toggle('overflow-hidden');
+
+      // Toggle between Hamburger and 'X' close icon
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    const mobileHomeDropdownBtn = document.getElementById('mobileHomeDropdownBtn');
+    const mobileHomeSubmenu = document.getElementById('mobileHomeSubmenu');
+    const mobileHomeArrow = document.getElementById('mobileHomeArrow');
+    
+    if (mobileHomeDropdownBtn) {
+      mobileHomeDropdownBtn.addEventListener('click', () => {
+        mobileHomeSubmenu.classList.toggle('hidden');
+        mobileHomeArrow.classList.toggle('rotate-180');
+      });
+    }
+
+    const toggleDarkMode = () => {
+      document.documentElement.classList.toggle('dark');
+    };
+    
+    const darkModeBtn = document.getElementById('darkModeToggle');
+    if (darkModeBtn) darkModeBtn.addEventListener('click', toggleDarkMode);
+
+    const darkModeMobileBtn = document.getElementById('darkModeToggleMobile');
+    if (darkModeMobileBtn) darkModeMobileBtn.addEventListener('click', toggleDarkMode);
+
+    const mobileDarkModeBtn = document.getElementById('mobileDarkModeToggle');
+    if (mobileDarkModeBtn) mobileDarkModeBtn.addEventListener('click', toggleDarkMode);
+
+    const toggleRTL = () => {
+      const html = document.documentElement;
+      const isRtl = html.getAttribute('dir') === 'rtl';
+      html.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
+      document.getElementById('rtlToggle').textContent = isRtl ? 'RTL' : 'LTR';
+      document.getElementById('mobileRtlToggle').textContent = isRtl ? 'RTL Toggle' : 'LTR Toggle';
+    };
+    
+    const rtlBtn = document.getElementById('rtlToggle');
+    if (rtlBtn) rtlBtn.addEventListener('click', toggleRTL);
+
+    const mobileRtlBtn = document.getElementById('mobileRtlToggle');
+    if (mobileRtlBtn) mobileRtlBtn.addEventListener('click', toggleRTL);
+
+    function showCustomMessage(msg) {
+      document.getElementById('modalMessage').textContent = msg;
+      document.getElementById('customModal').classList.remove('hidden');
+    }
+
+    function closeCustomModal() {
+      document.getElementById('customModal').classList.add('hidden');
+    }
+
+    // Interactive Quiz Logic
+    function selectBrew(type) {
+      const resultDiv = document.getElementById('quizResult');
+      const recText = document.getElementById('recommendationText');
+      resultDiv.classList.remove('hidden');
+      if (type === 'pour-over') {
+        recText.textContent = "Ethiopian Yirgacheffe Light Roast with floral & citrus notes.";
+      } else if (type === 'espresso') {
+        recText.textContent = "Italian Dark Roast Blend with rich crema & cocoa notes.";
+      } else if (type === 'cold-brew') {
+        recText.textContent = "Sumatra Mandheling Medium Roast with earthy smoothness.";
+      }
+    }
+  </script>
+</body>
+</html>
